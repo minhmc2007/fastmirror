@@ -15,7 +15,7 @@ def test_mirror(mirror):
     url = mirror['url']
     try:
         start = time.time()
-        # We perform a HEAD request to check latency without downloading the full DB
+        # Perform a HEAD request to check latency without downloading the full DB
         response = requests.head(url, timeout=TIMEOUT)
         if response.status_code == 200:
             return (time.time() - start, url)
